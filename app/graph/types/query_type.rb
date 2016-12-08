@@ -16,6 +16,12 @@ QueryType = GraphQL::ObjectType.define do
     }
   end
 
+  field :users, types[UserType] do
+  resolve ->(obj, args, ctx) {
+    User.all.limit(10)
+  }
+end
+
   field :hello do
     type !types.String
     resolve -> (obj, args, ctx) { 'Hello world!' }
