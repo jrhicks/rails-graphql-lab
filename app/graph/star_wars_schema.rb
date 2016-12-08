@@ -2,7 +2,9 @@ StarWarsSchema = GraphQL::Schema.define do
   query QueryType
 
   resolve_type ->(obj, ctx) do
-    { Droid => DroidType, Human => HumanType }.fetch(obj.class)
+    {
+      User => UserType,
+    }.fetch(obj.class)
   end
 
   object_from_id ->(id, ctx) do
