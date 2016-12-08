@@ -1,4 +1,4 @@
-StarWarsSchema = GraphQL::Schema.define do
+Schema = GraphQL::Schema.define do
   query QueryType
 
   resolve_type ->(obj, ctx) do
