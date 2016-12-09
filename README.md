@@ -11,6 +11,8 @@ Todo
 
   * http://mgiroux.me/2016/token-auth-in-relay-app-using-rails/
 
+  * http://rmosolgo.github.io/graphql-ruby/schema/configuration_options
+
 [ ] UUIDs
 
  * https://fabianoleittes.github.io/rails5/postgresql/uuids/2016/10/31/using-postgresql-uuids-as-primary-keys-with-rails-5/
