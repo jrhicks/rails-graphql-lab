@@ -16,11 +16,17 @@ QueryType = GraphQL::ObjectType.define do
     }
   end
 
+  field :accounts, types[AccountType] do
+    resolve -> (obj, args, ctx) {
+      Account.all
+    }
+  end
+
   field :users, types[UserType] do
-  resolve ->(obj, args, ctx) {
-    User.all.limit(10)
-  }
-end
+    resolve -> (obj, args, ctx) {
+      User.all
+    }
+  end
 
   field :hello do
     type !types.String

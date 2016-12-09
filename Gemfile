@@ -5,6 +5,7 @@ ruby '2.3.1'
 gem 'graphql', '~>0.19'
 gem 'graphiql-rails'
 gem 'devise'
+gem 'pundit'
 
 # This is an optional gem. When included, GraphQL will use a parser written in C
 # instead of the Ruby parser shipped with graphql-ruby.
