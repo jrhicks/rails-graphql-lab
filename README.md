@@ -3,7 +3,7 @@ Todo
 
 [x] Add webpack, React, Hello World
 
-[ ] Add Relay
+[x] Add Relay
 
  * Object Identification  https://rmosolgo.github.io/graphql-ruby/relay/object_identification
 
