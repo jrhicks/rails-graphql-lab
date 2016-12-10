@@ -1,7 +1,15 @@
 Todo
 ====
 
-[x] Add webpack, React, Hello World
+[x] From the Ruby Gem endorsed by Github Engineers start with a Rails 5 starter example and strip out the domain.
+
+* http://githubengineering.com/the-github-graphql-api/
+
+* https://github.com/github/github-graphql-rails-example
+
+[x] Add Yarn, Webpack, React to asset pipeline
+
+* http://www.startuplandia.io/posts/rails-react-relay-graphql-tutorial-application-setup/
 
 [x] Add Relay
 
