@@ -1,11 +1,17 @@
 Todo
 ====
 
-[x] From the Ruby Gem endorsed by Github Engineers start with a Rails 5 starter example and strip out the domain.
+[x] Start with a Rails starter app endorsed by Github Engineers and strip it down.
 
 * http://githubengineering.com/the-github-graphql-api/
 
 * https://github.com/github/github-graphql-rails-example
+
+[x] Add Devise and Pundit to Rails
+
+* https://github.com/plataformatec/devise
+
+* https://github.com/elabs/pundit
 
 [x] Add Yarn, Webpack, React to asset pipeline
 
