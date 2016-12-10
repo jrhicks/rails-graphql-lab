@@ -5,7 +5,16 @@ Todo
 
 [ ] Add Relay
 
- * https://rmosolgo.github.io/graphql-ruby/relay/object_identification
+ * Object Identification  https://rmosolgo.github.io/graphql-ruby/relay/object_identification
+
+ * Barebones Relay Example https://github.com/mhart/simple-relay-starter
+
+ * Startup Landia Example Repo https://github.com/jcdavison/to_eat_app/tree/da73d60ad9b2fa8b8d6358e4e1debf25f77e4feb/app/assets/javascripts/src
+
+ * Gotchas: http://stackoverflow.com/questions/38770986/unable-to-fetch-list-in-react-relay - viewer work around
+
+* GraphQL Docs - http://www.rubydoc.info/github/rmosolgo/graphql-ruby/GraphQL/ListType
+
 
 [ ] Authentication
 

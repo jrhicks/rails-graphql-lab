@@ -4,4 +4,7 @@ Rails.application.routes.draw do
   root to: "client#index"
   resources :queries
   resource :sha, only: :show
+  scope '/graphql' do
+    post"/", to: "queries#create"
+  end
 end
