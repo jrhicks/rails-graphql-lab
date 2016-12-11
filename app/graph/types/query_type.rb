@@ -8,8 +8,10 @@ QueryType = GraphQL::ObjectType.define do
   description "The query root for this schema"
   interfaces [GraphQL::Relay::Node.interface]
   field :node, GraphQL::Relay::Node.field
-  field :viewer, ViewerType do
-    description 'Root object to get viewer related collections'
-    resolve -> (obj, args, ctx) { Viewer::STATIC }
+  field :current_user, CurrentUserType do
+    description 'Currently Logged In User'
+    resolve -> (object, args, ctx) {
+      ctx[:current_user]
+    }
   end
 end

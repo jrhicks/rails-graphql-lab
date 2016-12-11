@@ -3,27 +3,15 @@ import Relay from 'react-relay'
 
 class UserIndex extends React.Component {
   render() {
-    const users = this.props.viewer.users;
-    return (
-      <ul>
-        {
-        users.map( (u) => {
-          return <li key={u.id}>{u.email}</li>
-        })
-        }
-      </ul>
-    )
+    return <h2>Welcome {this.props.current_user.email}</h2>;
   }
 }
 
 module.exports = Relay.createContainer(UserIndex, {
 fragments: {
-  viewer: () => Relay.QL`
-    fragment on Viewer {
-      users {
-        id
-        email
-      }
+  current_user: () => Relay.QL`
+    fragment on CurrentUser {
+      email
     }`
 }
 });

@@ -6,12 +6,22 @@ import ReactDOM from 'react-dom';
 import { RelayRouter } from 'react-router-relay'
 import UserIndex from './UserIndex';
 
+const token = localStorage.getItem('auth_token');
+const headers = { Authorization: '1:FcAT53LxAXzGQgusxNKc' }
+
 class HomeRoute extends Relay.Route {
   static queries = {
-    viewer: () => Relay.QL`query { viewer }`,
+    current_user: () => Relay.QL`query { current_user }`,
   }
   static routeName = 'HomeRoute';
 }
+
+Relay.injectNetworkLayer(
+  new Relay.DefaultNetworkLayer(
+    'http://localhost:3000/graphql', {
+      headers: headers
+    })
+);
 
 const Renderer = <Relay.Renderer
     environment={Relay.Store}

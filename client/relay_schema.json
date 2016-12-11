@@ -13,6 +13,20 @@
           "description": "The query root for this schema",
           "fields": [
             {
+              "name": "current_user",
+              "description": "Currently Logged In USer",
+              "args": [
+
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "CurrentUser",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
               "name": "id",
               "description": "ID of the object.",
               "args": [
@@ -52,20 +66,6 @@
               "type": {
                 "kind": "INTERFACE",
                 "name": "Node",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "viewer",
-              "description": "Root object to get viewer related collections",
-              "args": [
-
-              ],
-              "type": {
-                "kind": "OBJECT",
-                "name": "Viewer",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -123,82 +123,24 @@
           "possibleTypes": [
             {
               "kind": "OBJECT",
+              "name": "CurrentUser",
+              "ofType": null
+            },
+            {
+              "kind": "OBJECT",
               "name": "Query",
-              "ofType": null
-            },
-            {
-              "kind": "OBJECT",
-              "name": "User",
-              "ofType": null
-            },
-            {
-              "kind": "OBJECT",
-              "name": "Viewer",
               "ofType": null
             }
           ]
         },
         {
           "kind": "OBJECT",
-          "name": "Viewer",
-          "description": "Support unassociated root queries that fetches collections. Supports fetching posts and users collection",
-          "fields": [
-            {
-              "name": "id",
-              "description": null,
-              "args": [
-
-              ],
-              "type": {
-                "kind": "NON_NULL",
-                "name": "Non-Null",
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "ID",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "users",
-              "description": "Users",
-              "args": [
-
-              ],
-              "type": {
-                "kind": "LIST",
-                "name": "List",
-                "ofType": {
-                  "kind": "OBJECT",
-                  "name": "User",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
-          "inputFields": null,
-          "interfaces": [
-            {
-              "kind": "INTERFACE",
-              "name": "Node",
-              "ofType": null
-            }
-          ],
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "OBJECT",
-          "name": "User",
-          "description": "A person who uses our app",
+          "name": "CurrentUser",
+          "description": "Currently authenticated user.",
           "fields": [
             {
               "name": "email",
-              "description": "The name of this person",
+              "description": "The email address of the currently logged in User",
               "args": [
 
               ],
