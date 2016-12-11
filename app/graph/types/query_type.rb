@@ -11,7 +11,13 @@ QueryType = GraphQL::ObjectType.define do
   field :current_user, CurrentUserType do
     description 'Currently Logged In User'
     resolve -> (object, args, ctx) {
-      ctx[:current_user]
+      if (ctx[:current_user])
+        return ctx[:current_user]
+      else
+        anonymous = User.new
+        anonymous.is_anonymous = true
+        return anonymous
+      end
     }
   end
 end

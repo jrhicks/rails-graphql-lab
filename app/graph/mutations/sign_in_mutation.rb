@@ -5,7 +5,7 @@ SignInMutation = GraphQL::Relay::Mutation.define do
 
   return_field :access_token, types.String
 
-  resolve -> (args, ctx) {
+  resolve -> (root_obj, args, ctx) {
     @user = User.find_for_database_authentication(email: args[:email])
     access_token = if @user.valid_password?(args[:password])
       @user.access_token

@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   def authenticate_user_from_token!
     auth_token = request.headers['Authorization']
     # return authentication_error unless auth_token
-    authenticate_with_auth_token auth_token if auth_token
+    authenticate_with_auth_token auth_token if auth_token.present? && auth_token != "null"
   end
 
   def authenticate_with_auth_token(auth_token)

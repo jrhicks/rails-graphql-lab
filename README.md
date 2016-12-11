@@ -4,7 +4,7 @@ Todo
 [x] Start Rails 5 App with GraphQL gems endorsed by Github Engineers.
 
 ```
-We used the rmosolgo/graphql-ruby gem to implement the entirety of our schema. We also incorporated the Shopify/graphql-batch gem to ensure that multiple records and relationships were fetched efficiently.
+We [Gitub] used the rmosolgo/graphql-ruby gem to implement the entirety of our schema. We also incorporated the Shopify/graphql-batch gem to ensure that multiple records and relationships were fetched efficiently.
 ```
 
 * http://githubengineering.com/the-github-graphql-api/
@@ -38,11 +38,15 @@ We used the rmosolgo/graphql-ruby gem to implement the entirety of our schema. W
 
 [ ] Authentication
 
-  * http://mgiroux.me/2016/token-auth-in-relay-app-using-rails/
+* A blog post about a relay-based authentication mechanism http://mgiroux.me/2016/token-auth-in-relay-app-using-rails/
 
- * https://github.com/jcdavison/to_eat_app/tree/master/app/models/mutations
+ * An example mutation for retrieving a token https://github.com/jcdavison/to_eat_app/tree/master/app/models/mutations
 
- * http://rmosolgo.github.io/graphql-ruby/schema/configuration_options
+* Some example code https://gist.github.com/AndrewIngram/0c68add1c458aaca86c4adefaaa16eca
+
+ * How facebook does authorization - https://www.youtube.com/watch?v=etax3aEe2dA
+
+ * Dynamically change network layer - https://github.com/nodkz/react-relay-network-layer
 
 
 [ ] UUIDs

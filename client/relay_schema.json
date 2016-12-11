@@ -14,7 +14,7 @@
           "fields": [
             {
               "name": "current_user",
-              "description": "Currently Logged In USer",
+              "description": "Currently Logged In User",
               "args": [
 
               ],
@@ -173,6 +173,24 @@
               },
               "isDeprecated": false,
               "deprecationReason": null
+            },
+            {
+              "name": "is_anonymous",
+              "description": "Flag to represent an anonymous user.",
+              "args": [
+
+              ],
+              "type": {
+                "kind": "NON_NULL",
+                "name": "Non-Null",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Boolean",
+                  "ofType": null
+                }
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
             }
           ],
           "inputFields": null,
@@ -190,6 +208,16 @@
           "kind": "SCALAR",
           "name": "String",
           "description": "Represents textual data as UTF-8 character sequences. This type is most often used by GraphQL to represent free-form human-readable text.",
+          "fields": null,
+          "inputFields": null,
+          "interfaces": null,
+          "enumValues": null,
+          "possibleTypes": null
+        },
+        {
+          "kind": "SCALAR",
+          "name": "Boolean",
+          "description": "Represents `true` or `false` values.",
           "fields": null,
           "inputFields": null,
           "interfaces": null,
@@ -762,16 +790,6 @@
           "interfaces": [
 
           ],
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "SCALAR",
-          "name": "Boolean",
-          "description": "Represents `true` or `false` values.",
-          "fields": null,
-          "inputFields": null,
-          "interfaces": null,
           "enumValues": null,
           "possibleTypes": null
         },
