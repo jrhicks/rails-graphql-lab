@@ -1,10 +1,9 @@
-
 import React from 'react'
 import { Route, browserHistory } from 'react-router'
 import Relay from 'react-relay';
 import ReactDOM from 'react-dom';
 import { RelayRouter } from 'react-router-relay'
-import UserIndex from './UserIndex';
+import CurrentUser from './current_user';
 
 const token = localStorage.getItem('auth_token');
 const headers = { Authorization: '1:FcAT53LxAXzGQgusxNKc' }
@@ -25,7 +24,7 @@ Relay.injectNetworkLayer(
 
 const Renderer = <Relay.Renderer
     environment={Relay.Store}
-    Container={UserIndex}
+    Container={CurrentUser}
     queryConfig={new HomeRoute()}
   />
 

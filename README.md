@@ -1,11 +1,17 @@
 Todo
 ====
 
-[x] Start with a Rails starter app endorsed by Github Engineers and strip it down.
+[x] Start Rails 5 App with GraphQL gems endorsed by Github Engineers.
+
+```
+We used the rmosolgo/graphql-ruby gem to implement the entirety of our schema. We also incorporated the Shopify/graphql-batch gem to ensure that multiple records and relationships were fetched efficiently.
+```
 
 * http://githubengineering.com/the-github-graphql-api/
 
-* https://github.com/github/github-graphql-rails-example
+* https://rmosolgo.github.io/graphql-ruby/
+
+* https://github.com/rmosolgo/graphql-ruby-demo
 
 [x] Add Devise and Pundit to Rails
 
@@ -34,7 +40,10 @@ Todo
 
   * http://mgiroux.me/2016/token-auth-in-relay-app-using-rails/
 
-  * http://rmosolgo.github.io/graphql-ruby/schema/configuration_options
+ * https://github.com/jcdavison/to_eat_app/tree/master/app/models/mutations
+
+ * http://rmosolgo.github.io/graphql-ruby/schema/configuration_options
+
 
 [ ] UUIDs
 

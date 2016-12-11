@@ -1,5 +1,6 @@
 Schema = GraphQL::Schema.define do
   query QueryType
+  mutation RootMutationType
 
   resolve_type ->(obj, ctx) do
     {
