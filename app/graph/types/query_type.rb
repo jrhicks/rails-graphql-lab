@@ -8,7 +8,7 @@ QueryType = GraphQL::ObjectType.define do
   description "The query root for this schema"
   interfaces [GraphQL::Relay::Node.interface]
   field :node, GraphQL::Relay::Node.field
-  field :current_user, CurrentUserType do
+  field :viewer, ViewerType do
     description 'Currently Logged In User'
     resolve -> (object, args, ctx) {
       if (ctx[:current_user])

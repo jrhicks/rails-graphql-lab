@@ -29,8 +29,8 @@ class CurrentUser extends React.Component {
   }
 
   render() {
-    const current_user = this.props.current_user;
-    if (current_user.is_anonymous) {
+    const viewer = this.props.viewer;
+    if (viewer.is_anonymous) {
       return (
         <div>
           <h2>Login</h2>
@@ -52,7 +52,7 @@ class CurrentUser extends React.Component {
     } else {
       return (
         <div>
-          <h2>Welcome {current_user.email}</h2>
+          <h2>Welcome {viewer.email}</h2>
           <input type="submit" value="logout" onClick={()=>AccessTokenActions.setAccessToken(null)} />
         </div>
       );
@@ -62,8 +62,8 @@ class CurrentUser extends React.Component {
 
 module.exports = Relay.createContainer(CurrentUser, {
   fragments: {
-    current_user: () => Relay.QL`
-      fragment on CurrentUser {
+    viewer: () => Relay.QL`
+      fragment on Viewer {
         is_anonymous
         email
       }`

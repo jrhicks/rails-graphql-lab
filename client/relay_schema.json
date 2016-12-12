@@ -15,20 +15,6 @@
           "description": "The query root for this schema",
           "fields": [
             {
-              "name": "current_user",
-              "description": "Currently Logged In User",
-              "args": [
-
-              ],
-              "type": {
-                "kind": "OBJECT",
-                "name": "CurrentUser",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
               "name": "id",
               "description": "ID of the object.",
               "args": [
@@ -68,6 +54,20 @@
               "type": {
                 "kind": "INTERFACE",
                 "name": "Node",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "viewer",
+              "description": "Currently Logged In User",
+              "args": [
+
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "Viewer",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -125,19 +125,19 @@
           "possibleTypes": [
             {
               "kind": "OBJECT",
-              "name": "CurrentUser",
+              "name": "Query",
               "ofType": null
             },
             {
               "kind": "OBJECT",
-              "name": "Query",
+              "name": "Viewer",
               "ofType": null
             }
           ]
         },
         {
           "kind": "OBJECT",
-          "name": "CurrentUser",
+          "name": "Viewer",
           "description": "Currently authenticated user.",
           "fields": [
             {

@@ -2,7 +2,7 @@ import Relay from 'react-relay';
 
 class RelayHomeRoute extends Relay.Route {
   static queries = {
-    current_user: () => Relay.QL`query { current_user }`,
+    viewer: () => Relay.QL`query { viewer }`,
   }
   static routeName = 'HomeRoute';
 }

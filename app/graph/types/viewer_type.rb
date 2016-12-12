@@ -1,14 +1,9 @@
 ViewerType = GraphQL::ObjectType.define do
   name 'Viewer'
-  description 'Support unassociated root queries that fetches collections. Supports fetching posts and users collection'
+  description 'Currently authenticated user.'
   interfaces [GraphQL::Relay::Node.interface]
   global_id_field :id
 
-  field :users, UserType.to_list_type do
-    description 'Users'
-    resolve -> (object, args, ctx) {
-      User.all
-    }
-  end
-
+  field :email, !types.String, "The email address of the currently logged in User"
+  field :is_anonymous,   types.Boolean, "Flag to represent an anonymous user."
 end
