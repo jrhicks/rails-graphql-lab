@@ -1,15 +1,10 @@
 import React from 'react';
 import Relay from 'react-relay';
+import Viewer from './views/Viewer';
 
 const ViewerQueries = {
   viewer: () => Relay.QL`query { viewer }`,
 };
-
-class App extends React.Component {
-  render() {
-    return <h2>App</h2>;
-  }
-}
 
 class BrokenPage extends React.Component {
   render() {
@@ -26,7 +21,8 @@ class LoadingPage extends React.Component {
 const routes = [
   {
     path: '/',
-    component: App,
+    component: Viewer,
+    queries: ViewerQueries,
     childRoutes: [
     ],
   },

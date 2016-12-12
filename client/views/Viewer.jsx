@@ -1,13 +1,18 @@
 import React from 'react';
 import Relay from 'react-relay';
 import SignInMutation from './SignInMutation';
-import AccessTokenActions from '../flux/actions/AccessTokenActions';
 
-class CurrentUser extends React.Component {
+class Viewer extends React.Component {
 
   constructor(...params) {
     super(...params);
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleLogout() {
+    console.log('logout');
+    localStorage.setItem('accessToken', null);
+    window.location = '/';
   }
 
   handleSubmit(event) {
@@ -19,12 +24,15 @@ class CurrentUser extends React.Component {
 
     let onSuccess = (response) => {
       const access_token = response.signin.access_token;
-      AccessTokenActions.setAccessToken(access_token);
+      localStorage.setItem('accessToken', access_token);
+      window.location = '/';
     }
 
+    console.log({email: this.email})
+
     Relay.Store.commitUpdate(new SignInMutation({
-      email: this.email,
-      password: this.password
+      email: this.email.value,
+      password: this.password.value
     }), {onFailure, onSuccess});
   }
 
@@ -37,12 +45,12 @@ class CurrentUser extends React.Component {
           <form onSubmit={this.handleSubmit}>
            <label>
              Email:
-             <input type="text" ref={(email) => this.email = (email || {}).value} />
+             <input type="text" ref={(email) => this.email = email} />
            </label>
            <br />
            <label>
              Password:
-             <input type="password" ref={(password) => this.password = (password || {}).value} />
+             <input type="password" ref={(password) => this.password = password} />
            </label>
            <br />
            <input type="submit" value="Submit" />
@@ -53,14 +61,14 @@ class CurrentUser extends React.Component {
       return (
         <div>
           <h2>Welcome {viewer.email}</h2>
-          <input type="submit" value="logout" onClick={()=>AccessTokenActions.setAccessToken(null)} />
+          <input type="submit" value="logout" onClick={this.handleLogout} />
         </div>
       );
     }
   }
 }
 
-module.exports = Relay.createContainer(CurrentUser, {
+module.exports = Relay.createContainer(Viewer, {
   fragments: {
     viewer: () => Relay.QL`
       fragment on Viewer {

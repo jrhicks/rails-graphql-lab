@@ -1,5 +1,4 @@
 import Relay from 'react-relay';
-import AccessTokenStore from './flux/stores/AccessTokenStore';
 
 import {
   RelayNetworkLayer, retryMiddleware, urlMiddleware, authMiddleware, loggerMiddleware,
@@ -12,7 +11,7 @@ Relay.injectNetworkLayer(new RelayNetworkLayer([
   }),
   // example of the custom inline middleware
   next => req => {
-    req.headers['Authorization'] = AccessTokenStore.getAccessToken();
+    req.headers['Authorization'] = localStorage.getItem('accessToken');
     return next(req);
   }
 ], { disableBatchQuery: true }));
