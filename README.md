@@ -36,7 +36,7 @@ We [Gitub] used the rmosolgo/graphql-ruby gem to implement the entirety of our s
 * GraphQL Docs - http://www.rubydoc.info/github/rmosolgo/graphql-ruby/GraphQL/ListType
 
 
-[ ] Authentication
+[x] Authentication
 
 * A blog post about a relay-based authentication mechanism http://mgiroux.me/2016/token-auth-in-relay-app-using-rails/
 

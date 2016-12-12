@@ -1,5 +1,5 @@
 require 'digest/md5'
-RelaySchema = GraphQL::Schema.new(query: QueryType)
+RelaySchema = GraphQL::Schema.new(query: QueryType, mutation: RootMutationType)
 
 # Responsible for dumping Schema.json to app/assets/javascripts/relay/
 module RelaySchemaHelpers
