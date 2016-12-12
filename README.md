@@ -1,11 +1,8 @@
 Todo
 ====
 
-[x] Start Rails 5 App with GraphQL gems endorsed by Github Engineers.
+[x] Start Rails 5 App with GraphQL gems endorsed by Github Engineers.   We [Gitub] used the rmosolgo/graphql-ruby gem to implement the entirety of our schema. We also incorporated the Shopify/graphql-batch gem to ensure that multiple records and relationships were fetched efficiently.
 
-```
-We [Gitub] used the rmosolgo/graphql-ruby gem to implement the entirety of our schema. We also incorporated the Shopify/graphql-batch gem to ensure that multiple records and relationships were fetched efficiently.
-```
 
 * http://githubengineering.com/the-github-graphql-api/
 
@@ -48,8 +45,16 @@ We [Gitub] used the rmosolgo/graphql-ruby gem to implement the entirety of our s
 
  * Dynamically change network layer - https://github.com/nodkz/react-relay-network-layer
 
+[ ] Router
 
-[ ] UUIDs
+* React Relay Router - https://github.com/relay-tools/react-router-relay
+
+
+<hr />
+
+Other Ideas
+
+PostgreSQL UUIDs
 
  * https://fabianoleittes.github.io/rails5/postgresql/uuids/2016/10/31/using-postgresql-uuids-as-primary-keys-with-rails-5/
 
