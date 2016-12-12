@@ -1,5 +1,5 @@
 module.exports = {
-  entry: ["./client/app.jsx"],
+  entry: ["./client/client.js"],
   output: {
     path: "./app/assets/javascripts",
     filename: "client_bundle.js"
