@@ -1,0 +1,77 @@
+.LoginPage__root___3kCfh {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.LoginPage__formSide___Lt5Ff {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.LoginPage__brandSide___prbvM {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background-image: url("/assets/images/login_splash.png");
+  background-size: cover;
+  background-position: center center;
+}
+
+.LoginPage__outerContainer___2H57A {
+  background-color: #EEF1F6;
+  padding: 1rem;
+  height: 100vh;
+}
+
+.LoginPage__titleContainer___2Ocl7 {
+  padding-top: 10vh;
+  width: 350px;
+  margin: auto;
+  text-align: center;
+  color: #005FB2;
+  margin-bottom: 1.5rem;
+}
+
+.LoginPage__formContainer___1kCWh {
+  width: 350px;
+  margin: auto;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 5px;
+  border: 1px solid #A7B8D1;
+}
+
+.LoginPage__logo___2SgCz {
+  color: #005FB2;
+  margin: auto;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.LoginPage__loginButton___n94MR {
+  width: 100%;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.LoginPage__loginButton___n94MR img {
+  margin-left: 1em;
+  margin-right: 1em;
+  height: 1.5em;
+}
+
+.LoginPage__errorMessage___9UH0N {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  color: red;
+  font-weight: bold;
+}
+
+
+/*# sourceMappingURL=app.css.map*/
