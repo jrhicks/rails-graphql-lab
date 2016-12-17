@@ -18,6 +18,7 @@ class SignInMutation extends Relay.Mutation {
     return Relay.QL`
       fragment on SignInPayload {
         access_token
+        message
       }
     `;
   }
@@ -29,6 +30,7 @@ class SignInMutation extends Relay.Mutation {
         children: [Relay.QL`
           fragment on SignInPayload {
             access_token
+            message
           }
         `],
       }];

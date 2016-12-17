@@ -10,6 +10,7 @@ class LoginForm extends React.Component {
 
   constructor(props) {
     super(props);
+    this.state = {};
     this.onSubmit = this.onSubmit.bind(this);
   }
 
@@ -19,10 +20,13 @@ class LoginForm extends React.Component {
 
     let onSuccess = (response) => {
       const access_token = response.signin.access_token;
+      const message = response.signin.message;
       localStorage.setItem('accessToken', access_token);
-      if (access_token !== undefined ) {
+      if (access_token !== undefined && access_token !== null) {
         alert(access_token);
         window.location = '/';
+      } else {
+        this.setState({message: message});
       }
     }
 
@@ -49,6 +53,11 @@ class LoginForm extends React.Component {
         <Input label='Password' type='password' required={ true } error={ error }
           onChange={(e, password)=>this.setState({password})} />
         <input type="submit" style={{display: 'None'}} />
+        {
+         this.state.message ?
+         <b style={{color: 'red'}}>{this.state.message}</b> :
+         undefined
+        }
         <Button type='brand' onClick={this.onSubmit}>Submit</Button>
       </Form>
     );
