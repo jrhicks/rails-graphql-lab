@@ -5,6 +5,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  has_many :memberships
+  has_many :accounts, through: :memberships
+
   after_create :update_access_token!
 
   attr_accessor :is_anonymous

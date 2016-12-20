@@ -7,6 +7,7 @@ class LoginPage extends React.Component {
 
   constructor(...params) {
     super(...params);
+    console.log({state: this.state});
     this.state = {
       showLoader: false
     }
@@ -43,6 +44,7 @@ class LoginPage extends React.Component {
   }
 
   render() {
+    console.log({state: this.state});
     return (
       <div className={styles.root}>
         <div className={styles.formSide}>{this.renderForm()}</div>
@@ -53,4 +55,12 @@ class LoginPage extends React.Component {
 
 }
 
-module.exports = LoginPage;
+module.exports = Relay.createContainer(LoginPage, {
+  fragments: {
+    viewer: () => Relay.QL`
+      fragment on Viewer {
+        is_anonymous
+        email
+      }`
+  }
+});

@@ -23,8 +23,13 @@ class LoginForm extends React.Component {
       const message = response.signin.message;
       localStorage.setItem('accessToken', access_token);
       if (access_token !== undefined && access_token !== null) {
-        alert(access_token);
-        window.location = '/';
+        const { location } = this.props;
+        console.log({ location });
+        if (location && location.state && location.state.nextPathname) {
+            window.location = '/'+location.state.nextPathname;
+        } else {
+            window.location = '/';
+        }
       } else {
         this.setState({message: message});
       }
