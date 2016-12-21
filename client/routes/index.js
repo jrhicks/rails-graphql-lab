@@ -1,6 +1,9 @@
 import React from 'react'
-import { Route, IndexRoute } from 'react-router'
+import { Link, Route, IndexRoute } from 'react-router'
 import ViewerQuery from '../queries/ViewerQuery'
+import AdminQuery from '../queries/AdminQuery'
+import AdminPage from '../_Admin/AdminPage';
+import UserIndex from '../_Admin/UserIndex';
 import LoginPage from '../_Login/LoginPage';
 import Relay from 'react-relay';
 
@@ -18,9 +21,7 @@ function requireAuth(nextState, replace) {
 class Home extends React.Component {
   render() {
     return <div>
-      {
-        JSON.stringify(this.props.viewer, null, 2)
-      }
+    <Link to="/admin">Admin</Link>
     </div>;
   }
 }
@@ -38,6 +39,9 @@ const HomeContainer = Relay.createContainer(Home, {
 module.exports = (
   <Route path='/'>
     <IndexRoute component={HomeContainer} queries={ViewerQuery} onEnter={requireAuth} />
+    <Route path='admin' component={AdminPage} queries={AdminQuery} onEnter={requireAuth} >
+      <Route path='users' component={UserIndex} queries={AdminQuery} />
+    </Route>
     <Route path='login' component={LoginPage} queries={ViewerQuery} />
   </Route>
 )
