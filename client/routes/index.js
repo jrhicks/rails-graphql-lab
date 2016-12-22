@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link, Route, IndexRoute } from 'react-router'
 import ViewerQuery from '../queries/ViewerQuery'
-import AdminQuery from '../queries/AdminQuery'
 import AdminPage from '../_Admin/AdminPage';
 import UserIndex from '../_Admin/UserIndex';
 import LoginPage from '../_Login/LoginPage';
@@ -39,8 +38,8 @@ const HomeContainer = Relay.createContainer(Home, {
 module.exports = (
   <Route path='/'>
     <IndexRoute component={HomeContainer} queries={ViewerQuery} onEnter={requireAuth} />
-    <Route path='admin' component={AdminPage} queries={AdminQuery} onEnter={requireAuth} >
-      <Route path='users' component={UserIndex} queries={AdminQuery} />
+    <Route path='admin' component={AdminPage} queries={ViewerQuery} onEnter={requireAuth} >
+      <Route path='users' component={UserIndex} queries={ViewerQuery} />
     </Route>
     <Route path='login' component={LoginPage} queries={ViewerQuery} />
   </Route>

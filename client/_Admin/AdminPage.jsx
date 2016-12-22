@@ -25,14 +25,13 @@ class AdminPage extends React.Component {
 
 module.exports = Relay.createContainer(AdminPage, {
   fragments: {
-    admin: () => Relay.QL`
-      fragment on Admin {
-        users {
-          id
-          email
-        }
-        accounts {
-         id
+    viewer: () => Relay.QL`
+      fragment on Viewer {
+        id
+        admin {
+          users {
+            id
+          }
         }
       }`
   }

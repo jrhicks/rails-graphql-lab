@@ -10,4 +10,16 @@ ViewerType = GraphQL::ObjectType.define do
 
   connection :accounts, types[!AccountType]
 
+  field :admin, AdminType do
+    description 'Logged In User with Admin Priveledges'
+    resolve -> (object, args, ctx) {
+      current_user = ctx[:current_user]
+      if current_user && current_user.is_super
+        return current_user
+      else
+        return null
+      end
+    }
+  end
+
 end

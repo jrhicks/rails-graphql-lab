@@ -9,7 +9,7 @@ class UserIndexPage extends React.Component {
     return (
       <ul>
         {
-          this.props.admin.users.map( (user) => {
+          this.props.viewer.admin.users.map( (user) => {
             return <UserEntry key={user.id} user={user} />
           })
         }
@@ -21,11 +21,14 @@ class UserIndexPage extends React.Component {
 
 module.exports = Relay.createContainer(UserIndexPage, {
   fragments: {
-    admin: () => Relay.QL`
-      fragment on Admin {
-        users {
-          id
-          ${UserEntry.getFragment('user')}
+    viewer: () => Relay.QL`
+      fragment on Viewer {
+        id
+        admin {
+          users {
+            id
+            ${UserEntry.getFragment('user')}
+          }
         }
       }`
   }
